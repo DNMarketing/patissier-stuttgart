@@ -25,10 +25,14 @@ export function ProcessSteps({
         </Reveal>
         <ol className="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, i) => (
-            <li key={step.title} className="hairline-t pt-5">
-              <p className="sortiment-no text-h3 text-framboise">{i + 1}.</p>
-              <h3 className="mt-3 font-sans text-body font-semibold">{step.title}</h3>
-              <p className="mt-2 text-caption text-taupe">{step.text}</p>
+            <li key={step.title}>
+              <Reveal index={i}>
+                <div className="hairline-t pt-5">
+                  <p className="sortiment-no text-h3 text-framboise">{i + 1}.</p>
+                  <h3 className="mt-3 font-sans text-body font-semibold">{step.title}</h3>
+                  <p className="mt-2 text-caption text-taupe">{step.text}</p>
+                </div>
+              </Reveal>
             </li>
           ))}
         </ol>

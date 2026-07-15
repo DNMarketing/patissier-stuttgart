@@ -11,7 +11,7 @@ export const OG_CONTENT_TYPE = "image/png";
  */
 export function ogImage(title: string, eyebrow = "Französische Pâtisserie · Stuttgart-West") {
   const root = process.cwd();
-  const bodoni = fs.readFileSync(path.join(root, "src/fonts/og/BodoniModa-SemiBold.ttf"));
+  const fraunces = fs.readFileSync(path.join(root, "src/fonts/og/Fraunces-SemiBold.ttf"));
   const hanken = fs.readFileSync(path.join(root, "src/fonts/og/HankenGrotesk-Medium.ttf"));
   const logo = fs.readFileSync(path.join(root, "public/images/brand/logo-patissier-schwarz.png"));
 
@@ -50,7 +50,7 @@ export function ogImage(title: string, eyebrow = "Französische Pâtisserie · S
           <div
             style={{
               marginTop: 24,
-              fontFamily: "Bodoni",
+              fontFamily: "Fraunces",
               fontSize: title.length > 42 ? 56 : 68,
               lineHeight: 1.1,
               color: "#2a1e18",
@@ -78,7 +78,7 @@ export function ogImage(title: string, eyebrow = "Französische Pâtisserie · S
     {
       ...OG_SIZE,
       fonts: [
-        { name: "Bodoni", data: bodoni, weight: 600, style: "normal" },
+        { name: "Fraunces", data: fraunces, weight: 600, style: "normal" },
         { name: "Hanken", data: hanken, weight: 500, style: "normal" },
       ],
     },

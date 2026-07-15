@@ -1,22 +1,23 @@
 import localFont from "next/font/local";
 
-// Self-hosted (DSGVO): keine Font-CDNs. Variable Fonts, latin-Subset.
-export const bodoni = localFont({
-  src: [{ path: "../fonts/bodoni-moda-var.woff2", style: "normal" }],
-  weight: "400 800",
-  variable: "--font-bodoni",
+/**
+ * Self-hosted (DSGVO): keine Font-CDNs.
+ * Display: Fraunces (variable, optische Groessen) — nach Kundenfeedback statt
+ * Bodoni Moda: deutlich bessere Lesbarkeit bei gleichem Editorial-Charakter.
+ */
+export const fraunces = localFont({
+  src: [{ path: "../fonts/fraunces-var.woff2", style: "normal" }],
+  weight: "300 700",
+  variable: "--font-fraunces",
   display: "swap",
   adjustFontFallback: "Times New Roman",
 });
 
-/**
- * Italic nur für die kleinen N°-Labels (sortiment-no) — bewusst OHNE Preload,
- * damit es auf schmaler Leitung nicht mit dem LCP-Hero-Bild konkurriert.
- */
-export const bodoniItalic = localFont({
-  src: [{ path: "../fonts/bodoni-moda-italic-var.woff2", style: "italic" }],
-  weight: "400 800",
-  variable: "--font-bodoni-italic",
+/** Italic nur für N°-Labels/Zitate — bewusst OHNE Preload (LCP-Budget). */
+export const frauncesItalic = localFont({
+  src: [{ path: "../fonts/fraunces-italic-var.woff2", style: "italic" }],
+  weight: "300 700",
+  variable: "--font-fraunces-italic",
   display: "swap",
   preload: false,
   adjustFontFallback: "Times New Roman",

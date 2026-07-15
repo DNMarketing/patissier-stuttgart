@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
-import { bodoni, bodoniItalic, hanken } from "@/lib/fonts";
+import { UspTicker } from "@/components/UspTicker";
+import { fraunces, frauncesItalic, hanken } from "@/lib/fonts";
 import { bakeryJsonLd } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -26,7 +27,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className={`${bodoni.variable} ${bodoniItalic.variable} ${hanken.variable}`}>
+    <html lang="de" className={`${fraunces.variable} ${frauncesItalic.variable} ${hanken.variable}`}>
       <body>
         <a
           href="#inhalt"
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={bakeryJsonLd()} />
         <Header />
         <main id="inhalt">{children}</main>
+        <UspTicker />
         <Footer />
       </body>
     </html>

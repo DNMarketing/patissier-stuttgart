@@ -188,3 +188,22 @@ Ausschnitten (die Kundenfotos sind gut, aber kein Studio-Material — das Design
 | `logo-patissier-schwarz.png` (2500×1667) | Header/Footer (+ helle Variante), Favicon, OG |
 
 Legacy-Alt-Texte werden übernommen und wo nötig verfeinert (`content/legacy/images.json`).
+
+## Revision 2 (Kundenfeedback, 15.07.2026)
+
+1. **Display-Schrift:** Bodoni Moda → **Fraunces** (variable, optische Größen).
+   Feedback „schwer lesbar": Die Didone-Haarstriche flimmerten bei Fließgrößen.
+   Fraunces hält den Editorial-Charakter, liest sich aber deutlich ruhiger;
+   Taupe zusätzlich abgedunkelt (#5F5148), Headings auf Medium.
+2. **Vitrine:** Band beginnt jetzt bündig an der Container-Kante und läuft nur
+   nach rechts aus dem Bild (kein „leeres Fenster" links); Pfeile mit
+   Disabled-Zuständen; Karten staggern beim Eintritt.
+3. **Motion:** USP-Laufband über dem Footer (48 s, reduced-motion: statisch),
+   Stagger-Reveals für Karten, Angebots- und Ablauf-Elemente.
+4. **Unterseiten individualisiert** statt Schema F: Macarons (dunkle
+   Anatomie-Sektion + Gravur-Reihen), Törtchen (Vitrinen-Kategorien mit Tags),
+   Hochzeit (Stil-Reihen + 5-Etappen-Timeline), Geburtstag (Klein/Groß-Split +
+   Anlässe), Catering (Formate-Reihen + Sorgenfrei-Grid). Copy per
+   Multi-Agent-Workflow erstellt und adversarial auf erfundene Fakten,
+   Baukasten-Wiederholungen und Floskeln geprüft (17 Findings eingearbeitet).
+5. **Mehr Inhalt:** Home ergänzt um Manifest-Band und Journal-Teaser.

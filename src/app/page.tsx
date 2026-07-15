@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
+import { JournalTeaser } from "@/components/JournalTeaser";
+import { ManifestBand } from "@/components/feature-sections";
 import { TestimonialQuote } from "@/components/TestimonialQuote";
 import { Vitrine } from "@/components/Vitrine";
 import { pageMetadata } from "@/lib/seo";
 import { hours, site } from "@/lib/site";
+import { home } from "@content/data/seiten";
 import { getSortiment } from "@content/data/sortiment";
 import { testimonials } from "@content/data/testimonials";
 
@@ -93,7 +96,14 @@ export default function HomePage() {
       {/* Signature-Element: Die Vitrine */}
       <Vitrine />
 
-      {/* Grundsätze, die eine Puder-Fläche der Seite */}
+      <ManifestBand
+        label={home.manifest.label}
+        statement={home.manifest.items[0]!.title}
+        text={home.manifest.items[0]!.text}
+        link={{ href: "/ueber-uns", label: "Mehr über das Haus" }}
+      />
+
+      {/* Grundsätze: die eine Puder-Fläche der Seite */}
       <section aria-labelledby="grundsaetze-heading" className="bg-puder py-20 md:py-24">
         <div className="container-page">
           <Reveal>
@@ -156,6 +166,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <JournalTeaser />
 
       {/* Besuch: Öffnungszeiten prominent, Mo/Di klar als Ruhetage */}
       <section aria-labelledby="besuch-heading" className="hairline-t py-20 md:py-24">

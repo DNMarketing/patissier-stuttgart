@@ -10,18 +10,18 @@
   --color-schokolade: #2a1e18;
   --color-framboise: #9e2b43;
   --color-framboise-tief: #86243a;
-  --color-taupe: #6e5f55;
+  --color-taupe: #5f5148;
   --color-hairline: rgb(42 30 24 / 0.14);
   --color-hairline-hell: rgb(247 245 240 / 0.22);
 
   /* Schrift */
-  --font-display: var(--font-bodoni), "Bodoni MT", Didot, "Times New Roman", serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-hanken), "Helvetica Neue", Arial, sans-serif;
 
   /* Fluid Type-Scale */
-  --text-display: clamp(2.5rem, 4.6vw + 1.3rem, 5.5rem);
-  --text-display--line-height: 1.04;
-  --text-display--letter-spacing: -0.01em;
+  --text-display: clamp(2.5rem, 4.3vw + 1.3rem, 5.25rem);
+  --text-display--line-height: 1.06;
+  --text-display--letter-spacing: -0.015em;
   --text-h2: clamp(2rem, 2.6vw + 1.2rem, 3.5rem);
   --text-h2--line-height: 1.08;
   --text-h2--letter-spacing: -0.005em;
@@ -85,8 +85,9 @@
   h1,
   h2,
   h3 {
-    @apply font-display;
+    @apply font-display font-medium;
     text-wrap: balance;
+    font-optical-sizing: auto;
   }
 
   p {
@@ -118,7 +119,7 @@
 
   /* Sortiments-Nummer, z. B. „N° 03" */
   .sortiment-no {
-    font-family: var(--font-bodoni-italic), "Bodoni MT", Didot, "Times New Roman", serif;
+    font-family: var(--font-fraunces-italic), Georgia, "Times New Roman", serif;
     font-style: italic;
     font-feature-settings: "lnum";
   }
@@ -276,6 +277,12 @@
 /* ---------------------------------------------------------------------------
    Die Vitrine (Signature-Element): scroll-snap, kein Scroll-Jacking
    --------------------------------------------------------------------------- */
+.vitrine-wrap {
+  margin-inline-start: max(1.25rem, calc((100vw - 1200px) / 2 + 2rem));
+  border-top: 1px solid var(--color-hairline);
+  border-bottom: 1px solid var(--color-hairline);
+  border-left: 1px solid var(--color-hairline);
+}
 .vitrine-track {
   display: grid;
   grid-auto-flow: column;
@@ -284,8 +291,8 @@
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
-  scroll-padding-inline: max(1.25rem, calc((100vw - 1200px) / 2 + 2rem));
-  padding-inline: max(1.25rem, calc((100vw - 1200px) / 2 + 2rem));
+  scroll-padding-inline-start: 0px;
+  padding-inline-end: 1.25rem;
   scrollbar-width: none;
 }
 .vitrine-track::-webkit-scrollbar {
@@ -293,6 +300,35 @@
 }
 .vitrine-card {
   scroll-snap-align: start;
+}
+
+/* ---------------------------------------------------------------------------
+   USP-Ticker: langsames Laufband, ein durchgängiges Bewegungs-Element
+   --------------------------------------------------------------------------- */
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+}
+.ticker-track {
+  display: inline-flex;
+  animation: ticker-scroll 48s linear infinite;
+  will-change: transform;
+}
+@keyframes ticker-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
+
+.vitrine-arrow:disabled {
+  opacity: 0.25;
+  pointer-events: none;
 }
 
 /* ---------------------------------------------------------------------------
@@ -371,7 +407,7 @@
   margin-top: 1.5em;
   border-left: 2px solid var(--color-framboise);
   padding-left: 1.25em;
-  font-family: var(--font-bodoni-italic), "Bodoni MT", Didot, "Times New Roman", serif;
+  font-family: var(--font-fraunces-italic), Georgia, "Times New Roman", serif;
   font-style: italic;
   font-size: 1.25rem;
 }
