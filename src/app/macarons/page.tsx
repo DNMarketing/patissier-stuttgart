@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { TestimonialQuote } from "@/components/TestimonialQuote";
 import { EditorialRows, SensorikTrio } from "@/components/feature-sections";
+import { ImageBand } from "@/components/ImageBand";
 import { CtaSection, FaqTeaser } from "@/components/sections";
 import { OfferingsGrid, ServiceHero } from "@/components/service";
 import { pageMetadata } from "@/lib/seo";
@@ -55,6 +56,12 @@ export default function MacaronsPage() {
             text: "Vom Kaffeeklatsch bis zum Sweet Table: Wir produzieren Macarons auch in größeren Stückzahlen. Sprechen Sie uns rechtzeitig an.",
           },
         ]}
+      />
+
+      <ImageBand
+        src="/images/legacy/sweet-table-hochzeitstorte-macarons.jpg"
+        alt="Festlich gedeckter Sweet Table mit Torte und bunten Macarons."
+        caption="Macarons, bereit für den großen Auftritt"
       />
 
       <EditorialRows

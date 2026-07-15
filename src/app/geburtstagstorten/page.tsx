@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { TestimonialQuote } from "@/components/TestimonialQuote";
 import { EditorialRows, SplitFeature } from "@/components/feature-sections";
+import { ImageBand } from "@/components/ImageBand";
 import { CtaSection, FaqTeaser, ProcessSteps } from "@/components/sections";
 import { ServiceHero } from "@/components/service";
 import { pageMetadata } from "@/lib/seo";
@@ -32,6 +33,12 @@ export default function GeburtstagstortenPage() {
         label={geburtstagstorten.fuer_wen.label}
         title={geburtstagstorten.fuer_wen.title}
         items={[...geburtstagstorten.fuer_wen.items]}
+      />
+
+      <ImageBand
+        src="/images/legacy/dessert-toertchen-beeren-creme.jpg"
+        alt="Rosafarbenes Dessert mit weißer Creme und frischen Beeren."
+        caption="Feiern beginnt beim Dessert"
       />
 
       <EditorialRows

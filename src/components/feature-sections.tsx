@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "./Reveal";
+import { WordReveal } from "./WordReveal";
 
 export type FeatureItem = { title: string; text: string; tag?: string };
 
@@ -202,7 +203,7 @@ export function ManifestBand({
         <Reveal>
           <p className="label text-center text-taupe">{label}</p>
           <p className="mx-auto mt-6 max-w-4xl text-center font-display text-quote font-medium">
-            {statement}
+            <WordReveal text={statement} />
           </p>
           <p className="mx-auto mt-6 max-w-[58ch] text-center text-lead text-taupe">{text}</p>
           {link && (

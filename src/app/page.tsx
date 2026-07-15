@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { JournalTeaser } from "@/components/JournalTeaser";
+import { BoutiqueCollage } from "@/components/BoutiqueCollage";
 import { ManifestBand } from "@/components/feature-sections";
 import { TestimonialQuote } from "@/components/TestimonialQuote";
 import { Vitrine } from "@/components/Vitrine";
@@ -19,7 +20,12 @@ export const metadata: Metadata = pageMetadata({
   path: "/",
 });
 
-const heroLines = ["Französische", "Pâtisserie,", "handgemacht in", "Stuttgart-West."];
+const heroLines = [
+  { text: "Französische" },
+  { text: "Pâtisserie,", accent: true },
+  { text: "handgemacht in" },
+  { text: "Stuttgart-West." },
+];
 
 const grundsaetze = [
   {
@@ -48,9 +54,9 @@ export default function HomePage() {
         <div className="lg:col-span-7">
           <h1 className="text-display">
             {heroLines.map((line, i) => (
-              <span key={line} className="hero-line-mask">
+              <span key={line.text} className="hero-line-mask">
                 <span className="hero-line" style={{ "--i": i } as React.CSSProperties}>
-                  {line}
+                  {line.accent ? <em className="accent-em">{line.text}</em> : line.text}
                 </span>
               </span>
             ))}
@@ -89,6 +95,17 @@ export default function HomePage() {
               sizes="(max-width: 1024px) 90vw, 440px"
               className="object-cover"
             />
+            {/* Schwebendes Nebenbild: zweite Ebene, erst nach dem Hero-Moment */}
+            <div className="hero-side absolute -bottom-10 -left-16 hidden w-44 border-4 border-porzellan shadow-[0_18px_40px_rgb(42_30_24/0.18)] md:block">
+              <Image
+                src="/images/legacy/dessert-toertchen-beeren-creme.jpg"
+                alt=""
+                width={1284}
+                height={1563}
+                sizes="176px"
+                className="aspect-[4/5] w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -109,7 +126,7 @@ export default function HomePage() {
           <Reveal>
             <p className="label text-taupe">Unsere Grundsätze</p>
             <h2 id="grundsaetze-heading" className="mt-3 max-w-2xl text-h2">
-              Feinbäcker-Handwerk mit Verantwortung
+              Feinbäcker-Handwerk mit {" "}<em className="accent-em">Verantwortung</em>
             </h2>
           </Reveal>
           <div className="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-3">
@@ -127,6 +144,8 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      <BoutiqueCollage />
 
       <TestimonialQuote testimonial={testimonial} />
 
@@ -176,7 +195,7 @@ export default function HomePage() {
             <Reveal>
               <p className="label text-taupe">Die Boutique</p>
               <h2 id="besuch-heading" className="mt-3 text-h2">
-                Besuchen Sie uns, auch sonntags
+                Besuchen Sie uns, <em className="accent-em">auch sonntags</em>
               </h2>
             </Reveal>
             <p className="mt-6 max-w-[48ch] text-taupe">

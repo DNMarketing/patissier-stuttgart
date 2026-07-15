@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { TestimonialQuote } from "@/components/TestimonialQuote";
 import { EditorialRows, TimelineSteps } from "@/components/feature-sections";
+import { ImageBand } from "@/components/ImageBand";
 import { CtaSection, FaqTeaser } from "@/components/sections";
 import { ServiceHero } from "@/components/service";
 import { pageMetadata } from "@/lib/seo";
@@ -33,6 +34,12 @@ export default function HochzeitstortenPage() {
         title={hochzeitstorten.stile.title}
         intro={hochzeitstorten.stile.intro}
         items={[...hochzeitstorten.stile.items]}
+      />
+
+      <ImageBand
+        src="/images/legacy/sweet-table-hochzeitstorte-macarons.jpg"
+        alt="Sweet Table zur Hochzeit mit mehrstöckiger weißer Torte, Macarons und Kerzen."
+        caption="Aufgebaut, angerichtet, bereit für den Anschnitt"
       />
 
       {/* Einzigartig: die Planung als vertikale Timeline mit 5 Etappen */}

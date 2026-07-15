@@ -1,0 +1,91 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Reveal } from "./Reveal";
+
+const BILDER = [
+  {
+    src: "/images/legacy/hochzeitstorte-stuttgart-weiss-rosen.jpg",
+    alt: "Zweistöckige weiße Hochzeitstorte mit Blumendekoration und rosa Rosen.",
+    href: "/hochzeitstorten",
+    label: "N° 03 · Hochzeitstorten",
+    className: "row-span-2 aspect-[3/4]",
+    float: "float-slow",
+  },
+  {
+    src: "/images/legacy/dessert-toertchen-beeren-creme.jpg",
+    alt: "Rosafarbenes Dessert mit weißer Creme und frischen Beeren auf weißem Teller.",
+    href: "/toertchen-und-kuchen",
+    label: "N° 02 · Törtchen",
+    className: "aspect-[4/3]",
+    float: "float-slower",
+  },
+  {
+    src: "/images/legacy/macaron-buffet-catering-stuttgart.jpg",
+    alt: "Buffet mit einer Vielzahl bunter Macarons bei einer Feier.",
+    href: "/macarons",
+    label: "N° 01 · Macarons",
+    className: "aspect-[4/3]",
+    float: "float-slow",
+  },
+  {
+    src: "/images/legacy/schokoladentorte-goldblatt-patisserie.jpg",
+    alt: "Schokoladentorte mit dunkler Glasur und Blattgold auf blauem Teller.",
+    href: "/geburtstagstorten",
+    label: "N° 04 · Geburtstagstorten",
+    className: "aspect-[4/3]",
+    float: "float-slower",
+  },
+  {
+    src: "/images/legacy/sweet-table-hochzeitstorte-macarons.jpg",
+    alt: "Festlich gedeckter Sweet Table mit Torte, Macarons und Kerzen.",
+    href: "/catering",
+    label: "N° 05 · Catering",
+    className: "col-span-2 aspect-[16/9] sm:col-span-1 sm:aspect-[4/3]",
+    float: "float-slow",
+  },
+];
+
+/**
+ * „Aus der Boutique": asymmetrische Foto-Collage mit sanft schwebenden
+ * Kacheln, Hover-Zoom und N°-Etiketten. Jede Kachel führt in ihr Sortiment.
+ */
+export function BoutiqueCollage() {
+  return (
+    <section aria-labelledby="collage-heading" className="bg-schokolade py-20 text-porzellan md:py-28">
+      <div className="container-page">
+        <Reveal>
+          <p className="label text-porzellan/60">Aus der Boutique</p>
+          <h2 id="collage-heading" className="mt-3 max-w-2xl text-h2">
+            Momente, die man <em className="accent-em">anschneiden</em> möchte
+          </h2>
+        </Reveal>
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6">
+          {BILDER.map((bild, i) => (
+            <Reveal key={bild.src} index={i} className={bild.className.includes("row-span-2") ? "row-span-2" : undefined}>
+              <Link href={bild.href} className={`group block ${bild.float}`}>
+                <figure className={`img-hover relative overflow-hidden border border-porzellan/15 ${bild.className}`}>
+                  <Image
+                    src={bild.src}
+                    alt={bild.alt}
+                    fill
+                    sizes="(max-width: 640px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                  <figcaption className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-2 bg-schokolade/70 px-4 py-2.5 backdrop-blur-sm">
+                    <span className="label text-porzellan/90">{bild.label}</span>
+                    <span
+                      aria-hidden
+                      className="text-porzellan transition-transform duration-200 group-hover:translate-x-1"
+                    >
+                      →
+                    </span>
+                  </figcaption>
+                </figure>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { TestimonialQuote } from "@/components/TestimonialQuote";
 import { EditorialRows } from "@/components/feature-sections";
+import { ImageBand } from "@/components/ImageBand";
 import { CtaSection, FaqTeaser } from "@/components/sections";
 import { OfferingsGrid, ServiceHero } from "@/components/service";
 import { pageMetadata } from "@/lib/seo";
@@ -33,6 +34,12 @@ export default function ToertchenPage() {
         title={toertchen.vitrine_heute.title}
         intro={toertchen.vitrine_heute.intro}
         items={[...toertchen.vitrine_heute.items]}
+      />
+
+      <ImageBand
+        src="/images/legacy/schokoladentorte-goldblatt-patisserie.jpg"
+        alt="Schokoladentorte mit dunkler Glasur und Blattgold auf blauem Teller."
+        caption="Handwerk bis zum Blattgold"
       />
 
       <OfferingsGrid

@@ -249,7 +249,13 @@
 .hero-media {
   transform: scale(1.045);
   animation: hero-settle 1100ms var(--ease-hero) 150ms forwards;
-  overflow: hidden;
+}
+/* Schwebendes Nebenbild: erst einblenden (nach dem Hero-Moment), dann treiben */
+.hero-side {
+  opacity: 0;
+  animation:
+    hero-fade 700ms var(--ease-out-standard) 950ms forwards,
+    float-slow 7s ease-in-out 2s infinite alternate;
 }
 .hero-meta {
   opacity: 0;
@@ -277,29 +283,72 @@
 /* ---------------------------------------------------------------------------
    Die Vitrine (Signature-Element): scroll-snap, kein Scroll-Jacking
    --------------------------------------------------------------------------- */
-.vitrine-wrap {
-  margin-inline-start: max(1.25rem, calc((100vw - 1200px) / 2 + 2rem));
+/* Die Vitrine als endloses Laufband: volle Breite, klickbar, pausiert bei Hover */
+.vitrine-marquee {
+  overflow: hidden;
   border-top: 1px solid var(--color-hairline);
   border-bottom: 1px solid var(--color-hairline);
-  border-left: 1px solid var(--color-hairline);
 }
-.vitrine-track {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: min(78vw, 340px);
-  gap: 1px; /* Hairline-Fugen zwischen den Fächern */
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-  scroll-padding-inline-start: 0px;
-  padding-inline-end: 1.25rem;
-  scrollbar-width: none;
+.vitrine-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: vitrine-scroll 60s linear infinite;
+  will-change: transform;
 }
-.vitrine-track::-webkit-scrollbar {
-  display: none;
+.vitrine-marquee:hover .vitrine-marquee-track,
+.vitrine-marquee:focus-within .vitrine-marquee-track {
+  animation-play-state: paused;
+}
+@keyframes vitrine-scroll {
+  to {
+    transform: translateX(-50%);
+  }
 }
 .vitrine-card {
-  scroll-snap-align: start;
+  width: min(76vw, 340px);
+  border-left: 1px solid var(--color-hairline);
+}
+@media (prefers-reduced-motion: reduce) {
+  .vitrine-marquee {
+    overflow-x: auto;
+  }
+  .vitrine-marquee-track {
+    animation: none;
+  }
+}
+
+/* Sanftes Schweben (Hero-Nebenbild, Collage) */
+.float-slow {
+  animation: float-slow 7s ease-in-out infinite alternate;
+}
+.float-slower {
+  animation: float-slow 9s ease-in-out 1.2s infinite alternate;
+}
+@keyframes float-slow {
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+/* Ken-Burns für Bild-Bänder: sehr langsames Hineinzoomen */
+.kenburns img {
+  animation: kenburns 22s ease-in-out infinite alternate;
+}
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.09);
+  }
+}
+
+/* Kursiver Akzent in Display-Headlines */
+.accent-em {
+  font-family: var(--font-fraunces-italic), Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 450;
+  color: var(--color-framboise);
 }
 
 /* ---------------------------------------------------------------------------
@@ -326,10 +375,6 @@
   }
 }
 
-.vitrine-arrow:disabled {
-  opacity: 0.25;
-  pointer-events: none;
-}
 
 /* ---------------------------------------------------------------------------
    Reduced Motion: alle Einstiegszustände sofort sichtbar, keine Bewegung
@@ -337,13 +382,11 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-line,
   .hero-media,
+  .hero-side,
   .hero-meta {
     animation: none;
     opacity: 1;
     transform: none;
-  }
-  .vitrine-track {
-    scroll-behavior: auto;
   }
   *,
   *::before,
