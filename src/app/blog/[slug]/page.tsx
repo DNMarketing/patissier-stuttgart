@@ -75,7 +75,7 @@ export default async function BlogPostPage({
           <h1 className="mt-4 text-h2">{post.title}</h1>
           <p className="mt-5 text-lead text-taupe">{post.description}</p>
         </header>
-        <div className="relative mx-auto mt-10 aspect-[2/1] max-w-4xl border border-hairline">
+        <div className="card-soft relative mx-auto mt-10 aspect-[2/1] max-w-4xl rounded-3xl">
           <Image
             src={post.cover}
             alt={post.coverAlt}

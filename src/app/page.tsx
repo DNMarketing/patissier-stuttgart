@@ -14,9 +14,9 @@ import { getSortiment } from "@content/data/sortiment";
 import { testimonials } from "@content/data/testimonials";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Pâtissier Stuttgart – Französische Patisserie, Macarons & Torten",
+  title: "Pâtissier Stuttgart: Französische Patisserie, Macarons & Torten",
   description:
-    "Französische Pâtisserie in Stuttgart-West: Macarons, Törtchen und Torten – handgemacht, bio, 100 % halal. Sonntags geöffnet. Jetzt Torte oder Catering anfragen.",
+    "Französische Pâtisserie in Stuttgart-West: Macarons, Törtchen und Torten, handgemacht, bio und 100 % halal. Sonntags geöffnet. Jetzt Torte oder Catering anfragen.",
   path: "/",
 });
 
@@ -75,17 +75,17 @@ export default function HomePage() {
                 Sortiment ansehen
               </a>
             </div>
-            <p className="label mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-taupe">
-              <span>Kornbergstraße 17 · Stuttgart-West</span>
-              <span aria-hidden className="text-hairline">
-                |
+            <p className="mt-8 flex flex-wrap items-center gap-3">
+              <span className="label text-taupe">Kornbergstraße 17 · Stuttgart-West</span>
+              <span className="label rounded-full bg-framboise/10 px-3.5 py-1.5 text-framboise">
+                Sonntags geöffnet
               </span>
-              <span className="text-framboise">Sonntags geöffnet</span>
             </p>
           </div>
         </div>
         <div className="hero-media lg:col-span-5">
           <div className="relative mx-auto aspect-[3/4] max-h-[34rem] w-full max-w-md">
+            <div className="card-soft absolute inset-0 rounded-3xl" aria-hidden />
             <Image
               src={wedding.image}
               alt={wedding.imageAlt}
@@ -93,10 +93,10 @@ export default function HomePage() {
               priority
               fetchPriority="high"
               sizes="(max-width: 1024px) 90vw, 440px"
-              className="object-cover"
+              className="rounded-3xl object-cover"
             />
             {/* Schwebendes Nebenbild: zweite Ebene, erst nach dem Hero-Moment */}
-            <div className="hero-side absolute -bottom-10 -left-16 hidden w-44 border-4 border-porzellan shadow-[0_18px_40px_rgb(42_30_24/0.18)] md:block">
+            <div className="hero-side absolute -bottom-10 -left-16 hidden w-44 overflow-hidden rounded-2xl border-4 border-porzellan shadow-[0_18px_40px_rgb(42_30_24/0.18)] md:block">
               <Image
                 src="/images/legacy/dessert-toertchen-beeren-creme.jpg"
                 alt=""
@@ -236,7 +236,7 @@ export default function HomePage() {
                           : "text-taupe"
                       }`}
                     >
-                      {h.opens ? `${h.opens} – ${h.closes} Uhr` : "Ruhetag"}
+                      {h.opens ? `${h.opens} bis ${h.closes} Uhr` : "Ruhetag"}
                     </td>
                   </tr>
                 ))}

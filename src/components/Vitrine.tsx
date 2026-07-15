@@ -16,9 +16,9 @@ export function Vitrine() {
           key={(ariaHidden ? "b-" : "a-") + item.slug}
           href={item.href}
           tabIndex={ariaHidden ? -1 : undefined}
-          className="vitrine-card img-hover group block bg-porzellan"
+          className="vitrine-card card-soft group block"
         >
-          <div className="relative aspect-[4/5] overflow-hidden">
+          <div className="img-hover relative aspect-[4/5] rounded-none">
             <Image
               src={item.image}
               alt={ariaHidden ? "" : item.imageAlt}

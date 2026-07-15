@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = pageMetadata({
   title: "Impressum",
   description:
-    "Impressum der Pâtissier – Macaron & Tartelette Boutique, Kornbergstraße 17, 70176 Stuttgart. Anbieterkennzeichnung und Kontaktdaten.",
+    "Impressum der Pâtissier - Macaron & Tartelette Boutique, Kornbergstraße 17, 70176 Stuttgart. Anbieterkennzeichnung und Kontaktdaten.",
   path: "/impressum",
 });
 

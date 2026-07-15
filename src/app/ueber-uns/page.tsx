@@ -9,9 +9,9 @@ import { site } from "@/lib/site";
 import { testimonials } from "@content/data/testimonials";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Über uns – die Boutique in Stuttgart-West",
+  title: "Über uns: die Boutique in Stuttgart-West",
   description:
-    "Pâtissier – Macaron & Tartelette Boutique: französisches Feinbäcker-Handwerk in Stuttgart-West. Lernen Sie unsere Philosophie kennen – mit Verantwortung gebacken.",
+    "Pâtissier - Macaron & Tartelette Boutique: französisches Feinbäcker-Handwerk in Stuttgart-West. Lernen Sie unsere Philosophie kennen, mit Verantwortung gebacken.",
   path: "/ueber-uns",
 });
 

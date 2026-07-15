@@ -3,7 +3,7 @@
  * damit die Angaben auf jeder Seite exakt identisch sind (Local SEO).
  */
 export const site = {
-  name: "Pâtissier – Macaron & Tartelette Boutique",
+  name: "Pâtissier - Macaron & Tartelette Boutique",
   shortName: "Pâtissier",
   legalName: "Pâtissier - Macarons & Cakes", // lt. Impressum der Live-Site
   owner: "Betül Zavacki",

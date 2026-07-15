@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = pageMetadata({
   title: "Datenschutzerklärung",
   description:
-    "Datenschutzerklärung der Pâtissier – Macaron & Tartelette Boutique: Informationen zur Verarbeitung personenbezogener Daten auf dieser Website.",
+    "Datenschutzerklärung der Pâtissier - Macaron & Tartelette Boutique: Informationen zur Verarbeitung personenbezogener Daten auf dieser Website.",
   path: "/datenschutz",
 });
 

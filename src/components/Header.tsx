@@ -25,15 +25,15 @@ export function Header() {
   return (
     <header className="hairline-b sticky top-0 z-50 bg-porzellan/95 backdrop-blur-sm">
       <div className="container-page flex h-16 items-center justify-between gap-6 md:h-20">
-        <Link href="/" aria-label="Pâtissier – zur Startseite" className="shrink-0">
+        <Link href="/" aria-label="Pâtissier: zur Startseite" className="shrink-0">
           <Image
             src="/images/brand/logo-patissier-schwarz.png"
             alt=""
             width={2500}
             height={1667}
             priority
-            className="h-9 w-auto md:h-11"
-            sizes="140px"
+            className="h-11 w-auto md:h-14"
+            sizes="200px"
           />
         </Link>
 
@@ -103,7 +103,7 @@ export function Header() {
               {site.phone.display}
             </a>
             <p className="text-center text-caption text-taupe">
-              Mi–So geöffnet · Sonntags bis 17 Uhr · Mo & Di Ruhetage
+              Mi-So geöffnet · Sonntags bis 17 Uhr · Mo & Di Ruhetage
             </p>
           </div>
         </nav>

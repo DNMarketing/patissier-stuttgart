@@ -16,7 +16,7 @@ export function MapCard() {
 
   if (loaded) {
     return (
-      <div className="relative aspect-[4/3] w-full border border-hairline">
+      <div className="card-soft relative aspect-[4/3] w-full rounded-2xl">
         <iframe
           src={`https://www.google.com/maps?q=${MAPS_QUERY}&output=embed&hl=de`}
           title={`Karte: ${site.name}, ${site.address.street}, ${site.address.zip} ${site.address.city}`}
@@ -29,7 +29,7 @@ export function MapCard() {
   }
 
   return (
-    <div className="flex aspect-[4/3] w-full flex-col items-start justify-between border border-hairline bg-puder p-6 sm:p-8">
+    <div className="card-soft flex aspect-[4/3] w-full flex-col items-start justify-between bg-puder p-6 sm:p-8">
       <div>
         <p className="label text-taupe">Ihr Weg zu uns</p>
         <p className="mt-4 font-display text-h3">

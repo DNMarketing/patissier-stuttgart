@@ -4,8 +4,8 @@ export const dynamic = "force-static";
 
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
-export const alt = "Macarons – fein, farbenfroh, voller Charakter | Pâtissier Stuttgart";
+export const alt = "Macarons: fein, farbenfroh, voller Charakter | Pâtissier Stuttgart";
 
 export default function Image() {
-  return ogImage("Macarons – fein, farbenfroh, voller Charakter");
+  return ogImage("Macarons: fein, farbenfroh, voller Charakter");
 }

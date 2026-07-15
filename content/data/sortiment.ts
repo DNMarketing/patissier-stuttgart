@@ -1,5 +1,5 @@
 /**
- * Das Sortiment, die fünf Fächer der Vitrine (N° 01–05).
+ * Das Sortiment, die fünf Fächer der Vitrine (N° 01-05).
  * Vom Kunden ohne Code-Wissen editierbar: Texte hier ändern, fertig.
  */
 export type Sortiment = {

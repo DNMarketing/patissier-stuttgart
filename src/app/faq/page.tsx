@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
 import { faqs } from "@content/data/faqs";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Häufige Fragen – halal, vegan, Bestellung & Abholung",
+  title: "Häufige Fragen: halal, vegan, Bestellung & Abholung",
   description:
     "Alle Antworten auf einen Blick: halal-Zutaten, vegane Optionen, Vorlaufzeiten, Lieferung und Öffnungszeiten. Ihre Frage fehlt? Rufen Sie uns einfach an!",
   path: "/faq",

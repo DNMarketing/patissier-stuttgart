@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 import { hours, site } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Kontakt & Anfahrt – Torte oder Catering anfragen",
+  title: "Kontakt & Anfahrt: Torte oder Catering anfragen",
   description:
     "Torte, Macarons oder Catering anfragen: Kontaktformular, Telefon und Anfahrt zur Boutique in der Kornbergstraße 17, Stuttgart-West. Sonntags geöffnet!",
   path: "/kontakt",
@@ -76,7 +76,7 @@ export default function KontaktPage() {
                           : "text-taupe"
                       }`}
                     >
-                      {h.opens ? `${h.opens} – ${h.closes} Uhr` : "Ruhetag"}
+                      {h.opens ? `${h.opens} bis ${h.closes} Uhr` : "Ruhetag"}
                     </td>
                   </tr>
                 ))}

@@ -11,9 +11,9 @@ import { getSortiment } from "@content/data/sortiment";
 import { testimonials } from "@content/data/testimonials";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Hochzeitstorte Stuttgart – individuell & handgemacht",
+  title: "Hochzeitstorte Stuttgart: individuell & handgemacht",
   description:
-    "Hochzeitstorten aus Stuttgart: individuell gestaltet, handgemacht, bio und 100 % halal – mit persönlicher Beratung. Jetzt Ihre Hochzeitstorte anfragen!",
+    "Hochzeitstorten aus Stuttgart: individuell gestaltet, handgemacht, bio und 100 % halal, mit persönlicher Beratung. Jetzt Ihre Hochzeitstorte anfragen!",
   path: "/hochzeitstorten",
 });
 

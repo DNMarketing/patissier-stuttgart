@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "./Reveal";
 import { site } from "@/lib/site";
@@ -109,43 +110,55 @@ export function CtaSection({
 }) {
   const relatedItems = sortiment.filter((s) => related.includes(s.slug));
   return (
-    <section aria-labelledby="cta-heading" className="bg-schokolade py-20 text-porzellan md:py-24">
+    <section aria-labelledby="cta-heading" className="hairline-t py-20 md:py-24">
       <div className="container-page">
-        <div className="max-w-2xl">
-          <h2 id="cta-heading" className="text-h2">
-            {title}
-          </h2>
-          <p className="mt-5 text-lead text-porzellan/75">{text}</p>
-          <div className="mt-9 flex flex-wrap gap-4">
-            <Link href="/kontakt" className="btn btn-primary">
-              {ctaLabel}
-            </Link>
-            <a href={`tel:${site.phone.e164}`} className="btn btn-ghost-dark">
-              {site.phone.display}
-            </a>
+        <div className="grid items-center gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <h2 id="cta-heading" className="text-h2">
+              {title}
+            </h2>
+            <p className="mt-5 max-w-[54ch] text-lead text-taupe">{text}</p>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <Link href="/kontakt" className="btn btn-primary">
+                {ctaLabel}
+              </Link>
+              <a href={`tel:${site.phone.e164}`} className="btn btn-secondary">
+                {site.phone.display}
+              </a>
+            </div>
+            <p className="mt-5 text-caption text-taupe">
+              Unverbindlich anfragen. Wir melden uns schnellstmöglich zurück.
+            </p>
           </div>
-          <p className="mt-5 text-caption text-porzellan/55">
-            Unverbindlich anfragen, wir melden uns schnellstmöglich zurück.
-          </p>
+          <div className="hidden lg:col-span-4 lg:col-start-9 lg:block">
+            <Image
+              src="/images/brand/logo-patissier-schwarz.png"
+              alt=""
+              width={2500}
+              height={1667}
+              sizes="340px"
+              className="mx-auto w-full max-w-xs opacity-90"
+            />
+          </div>
         </div>
 
         {relatedItems.length > 0 && (
-          <div className="mt-16 border-t border-porzellan/15 pt-8">
-            <p className="label text-porzellan/50">Auch aus unserer Vitrine</p>
+          <div className="hairline-t mt-16 pt-8">
+            <p className="label text-taupe">Auch aus unserer Vitrine</p>
             <div className="mt-5 flex flex-wrap gap-x-10 gap-y-4">
               {relatedItems.map((item) => (
                 <Link
                   key={item.slug}
                   href={item.href}
-                  className="group flex items-baseline gap-3 text-porzellan/85 hover:text-porzellan"
+                  className="group flex items-baseline gap-3 text-schokolade hover:text-framboise"
                 >
-                  <span className="sortiment-no text-caption text-porzellan/50">
+                  <span className="sortiment-no text-caption text-taupe">
                     N° {item.no}
                   </span>
                   <span className="font-display text-h3">{item.name}</span>
                   <span
                     aria-hidden
-                    className="inline-block transition-transform duration-200 group-hover:translate-x-1"
+                    className="inline-block text-framboise transition-transform duration-200 group-hover:translate-x-1"
                   >
                     →
                   </span>

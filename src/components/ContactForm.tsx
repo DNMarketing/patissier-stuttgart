@@ -9,7 +9,7 @@ const ANLAESSE = ["Hochzeit", "Geburtstag", "Catering", "Macarons", "Sonstiges"]
 type Status = "idle" | "sending" | "success" | "error";
 
 const inputClasses =
-  "w-full border border-hairline bg-white/60 px-4 py-3 text-body text-schokolade placeholder:text-taupe/60 focus:border-schokolade";
+  "w-full rounded-xl border border-hairline bg-white/60 px-4 py-3 text-body text-schokolade placeholder:text-taupe/60 focus:border-schokolade";
 
 /**
  * Anfrageformular → Netlify Forms (statische Definition in public/__forms.html,
@@ -75,7 +75,7 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="border border-hairline bg-puder p-8" role="status">
+      <div className="card-soft bg-puder p-8" role="status">
         <p className="font-display text-h3">Ihre Anfrage ist angekommen.</p>
         <p className="mt-3 text-taupe">
           Wir melden uns schnellstmöglich bei Ihnen, meist innerhalb von ein bis zwei

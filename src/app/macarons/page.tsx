@@ -11,9 +11,9 @@ import { getSortiment } from "@content/data/sortiment";
 import { testimonials } from "@content/data/testimonials";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Macarons Stuttgart – auch personalisiert mit Gravur",
+  title: "Macarons Stuttgart: auch personalisiert mit Gravur",
   description:
-    "Macarons aus Stuttgart-West: handgemacht, bio, 100 % halal – auch personalisiert oder mit Gravur für Hochzeit und Events. Jetzt Macarons anfragen!",
+    "Macarons aus Stuttgart-West: handgemacht, bio, 100 % halal, auch personalisiert oder mit Gravur für Hochzeit und Events. Jetzt Macarons anfragen!",
   path: "/macarons",
 });
 

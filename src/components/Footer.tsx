@@ -10,11 +10,11 @@ export function Footer() {
         <div>
           <Image
             src="/images/brand/logo-patissier-schwarz.png"
-            alt="Pâtissier – Macaron & Tartelette Boutique"
+            alt="Pâtissier: Macaron & Tartelette Boutique"
             width={2500}
             height={1667}
-            className="h-12 w-auto invert"
-            sizes="180px"
+            className="h-16 w-auto invert md:h-20"
+            sizes="280px"
           />
           <address className="mt-6 text-[0.9375rem] leading-relaxed text-porzellan/80 not-italic">
             {site.name}
@@ -104,7 +104,7 @@ export function Footer() {
                         : "py-1 text-porzellan/60"
                     }
                   >
-                    {h.opens ? `${h.opens} – ${h.closes} Uhr` : "Ruhetag"}
+                    {h.opens ? `${h.opens} bis ${h.closes} Uhr` : "Ruhetag"}
                   </td>
                 </tr>
               ))}

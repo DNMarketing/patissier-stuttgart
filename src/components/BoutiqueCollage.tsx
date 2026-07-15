@@ -51,10 +51,10 @@ const BILDER = [
  */
 export function BoutiqueCollage() {
   return (
-    <section aria-labelledby="collage-heading" className="bg-schokolade py-20 text-porzellan md:py-28">
+    <section aria-labelledby="collage-heading" className="hairline-t py-20 md:py-28">
       <div className="container-page">
         <Reveal>
-          <p className="label text-porzellan/60">Aus der Boutique</p>
+          <p className="label text-taupe">Aus der Boutique</p>
           <h2 id="collage-heading" className="mt-3 max-w-2xl text-h2">
             Momente, die man <em className="accent-em">anschneiden</em> möchte
           </h2>
@@ -63,7 +63,7 @@ export function BoutiqueCollage() {
           {BILDER.map((bild, i) => (
             <Reveal key={bild.src} index={i} className={bild.className.includes("row-span-2") ? "row-span-2" : undefined}>
               <Link href={bild.href} className={`group block ${bild.float}`}>
-                <figure className={`img-hover relative overflow-hidden border border-porzellan/15 ${bild.className}`}>
+                <figure className={`card-soft img-hover relative ${bild.className}`}>
                   <Image
                     src={bild.src}
                     alt={bild.alt}
@@ -71,11 +71,11 @@ export function BoutiqueCollage() {
                     sizes="(max-width: 640px) 50vw, 33vw"
                     className="object-cover"
                   />
-                  <figcaption className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-2 bg-schokolade/70 px-4 py-2.5 backdrop-blur-sm">
-                    <span className="label text-porzellan/90">{bild.label}</span>
+                  <figcaption className="absolute bottom-3 left-3 flex items-center gap-2 rounded-full bg-porzellan/90 px-4 py-2 backdrop-blur-sm">
+                    <span className="label text-schokolade">{bild.label}</span>
                     <span
                       aria-hidden
-                      className="text-porzellan transition-transform duration-200 group-hover:translate-x-1"
+                      className="text-framboise transition-transform duration-200 group-hover:translate-x-1"
                     >
                       →
                     </span>

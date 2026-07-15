@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 import { faqsByTopic } from "@content/data/faqs";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Halal-Konditorei Stuttgart – Bio & vegane Patisserie",
+  title: "Halal-Konditorei Stuttgart: Bio & vegane Patisserie",
   description:
     "100 % halal, Bio-Zutaten, viele vegane Kreationen: französische Patisserie in Stuttgart, die möglichst viele genießen können. Erfahren Sie, wie wir arbeiten.",
   path: "/halal-bio-vegan",

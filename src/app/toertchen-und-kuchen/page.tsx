@@ -11,9 +11,9 @@ import { getSortiment } from "@content/data/sortiment";
 import { testimonials } from "@content/data/testimonials";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Törtchen & Kuchen Stuttgart – französische Patisserie",
+  title: "Törtchen & Kuchen Stuttgart: französische Patisserie",
   description:
-    "Französische Törtchen und Kuchen in Stuttgart: Creme, Frucht und Biskuit in Harmonie – bio, 100 % halal, vieles vegan. Besuchen Sie unsere Boutique!",
+    "Französische Törtchen und Kuchen in Stuttgart: Creme, Frucht und Biskuit in Harmonie. Bio, 100 % halal, vieles vegan. Besuchen Sie unsere Boutique!",
   path: "/toertchen-und-kuchen",
 });
 

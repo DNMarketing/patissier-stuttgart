@@ -7,9 +7,9 @@ import { formatDate, getAllPosts } from "@/lib/blog";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Journal – Wissen rund um Patisserie, Torten & Events",
+  title: "Journal: Wissen rund um Patisserie, Torten & Events",
   description:
-    "Das Pâtissier-Journal: Hochzeitstorten planen, Sweet Tables kalkulieren, echte Macarons erkennen – Fachwissen aus der Backstube in Stuttgart-West. Jetzt lesen!",
+    "Das Pâtissier-Journal: Hochzeitstorten planen, Sweet Tables kalkulieren, echte Macarons erkennen: Fachwissen aus der Backstube in Stuttgart-West. Jetzt lesen!",
   path: "/blog",
 });
 
@@ -36,7 +36,7 @@ export default function BlogIndexPage() {
             <Reveal key={post.slug} index={i % 3}>
               <article>
                 <Link href={`/blog/${post.slug}`} className="group block">
-                  <div className="img-hover relative aspect-[3/2] border border-hairline">
+                  <div className="card-soft img-hover relative aspect-[3/2]">
                     <Image
                       src={post.cover}
                       alt={post.coverAlt}

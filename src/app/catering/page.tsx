@@ -12,9 +12,9 @@ import { getSortiment } from "@content/data/sortiment";
 import { testimonials } from "@content/data/testimonials";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Dessert-Catering Stuttgart – Sweet Tables & Torten",
+  title: "Dessert-Catering Stuttgart: Sweet Tables & Torten",
   description:
-    "Dessert-Catering in Stuttgart: Sweet Tables, Petit Fours und Torten – inklusive Geschirr und stilvoller Inszenierung vor Ort. Jetzt Catering anfragen!",
+    "Dessert-Catering in Stuttgart: Sweet Tables, Petit Fours und Torten, inklusive Geschirr und stilvoller Inszenierung vor Ort. Jetzt Catering anfragen!",
   path: "/catering",
 });
 

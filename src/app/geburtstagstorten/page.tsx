@@ -11,9 +11,9 @@ import { getSortiment } from "@content/data/sortiment";
 import { testimonials } from "@content/data/testimonials";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Geburtstagstorte Stuttgart bestellen – handgemacht",
+  title: "Geburtstagstorte Stuttgart bestellen: handgemacht",
   description:
-    "Geburtstagstorte in Stuttgart bestellen: individuell gestaltet, handgemacht, bio und 100 % halal – für Kinder wie Erwachsene. Jetzt Wunschtorte anfragen!",
+    "Geburtstagstorte in Stuttgart bestellen: individuell gestaltet, handgemacht, bio und 100 % halal, für Kinder wie Erwachsene. Jetzt Wunschtorte anfragen!",
   path: "/geburtstagstorten",
 });
 

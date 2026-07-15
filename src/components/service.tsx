@@ -36,7 +36,7 @@ export function ServiceHero({
         </div>
         {/* LCP-Bild: bewusst ohne Reveal, damit der Paint nicht an der Hydration hängt */}
         <div className="lg:col-span-5">
-          <div className="img-hover relative aspect-[4/5] max-h-130 w-full">
+          <div className="img-hover card-soft relative aspect-[4/5] max-h-130 w-full rounded-3xl">
             <Image
               src={imageOverride?.src ?? item.image}
               alt={imageOverride?.alt ?? item.imageAlt}
@@ -79,9 +79,11 @@ export function OfferingsGrid({
           <h2 className="mt-3 max-w-2xl text-h2">{title}</h2>
           {intro && <p className="mt-5 max-w-[58ch] text-lead text-taupe">{intro}</p>}
         </Reveal>
-        <dl className="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-2">
+        <dl
+          className={`mt-12 grid gap-x-12 gap-y-10 ${items.length % 3 === 0 ? "md:grid-cols-3" : "md:grid-cols-2"}`}
+        >
           {items.map((item, i) => (
-            <Reveal key={item.title} index={i % 2}>
+            <Reveal key={item.title} index={i % 3}>
               <div className="hairline-t pt-5">
                 <dt className="font-display text-h3">{item.title}</dt>
                 <dd className="mt-3 max-w-[52ch] text-taupe">{item.text}</dd>

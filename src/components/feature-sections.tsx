@@ -78,7 +78,7 @@ export function SplitFeature({
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {items.map((item, i) => (
             <Reveal key={item.title} index={i}>
-              <article className="flex h-full flex-col border border-hairline bg-porzellan p-8 md:p-10">
+              <article className="card-soft flex h-full flex-col p-8 md:p-10">
                 <p className="sortiment-no text-caption text-taupe">
                   {String(i + 1).padStart(2, "0")}
                 </p>
@@ -109,22 +109,22 @@ export function SensorikTrio({
   items: FeatureItem[];
 }) {
   return (
-    <section aria-label={label} className="bg-schokolade py-20 text-porzellan md:py-28">
+    <section aria-label={label} className="bg-puder py-20 md:py-28">
       <div className="container-page">
         <Reveal>
-          <p className="label text-porzellan/60">{label}</p>
+          <p className="label text-taupe">{label}</p>
           <h2 className="mt-3 max-w-2xl text-h2">{title}</h2>
-          {intro && <p className="mt-5 max-w-[58ch] text-lead text-porzellan/70">{intro}</p>}
+          {intro && <p className="mt-5 max-w-[58ch] text-lead text-taupe">{intro}</p>}
         </Reveal>
-        <div className="mt-14 grid gap-x-10 gap-y-12 md:grid-cols-3">
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
           {items.map((item, i) => (
             <Reveal key={item.title} index={i}>
-              <div className="border-t border-porzellan/20 pt-6">
-                <p className="sortiment-no text-[3.25rem] leading-none text-framboise/90">
+              <div className="card-soft h-full p-8">
+                <p className="sortiment-no text-[3.25rem] leading-none text-framboise">
                   {String(i + 1).padStart(2, "0")}
                 </p>
                 <h3 className="mt-4 font-display text-h3">{item.title}</h3>
-                <p className="mt-3 text-porzellan/75">{item.text}</p>
+                <p className="mt-3 text-taupe">{item.text}</p>
               </div>
             </Reveal>
           ))}

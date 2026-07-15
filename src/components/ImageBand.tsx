@@ -1,8 +1,9 @@
 import Image from "next/image";
+import { Reveal } from "./Reveal";
 
 /**
- * Volle Breite, ruhiger Ken-Burns-Zoom: ein atmendes Bild-Band zwischen
- * Textsektionen. Bringt Fotografie in jede Unterseite, ohne Text zu stören.
+ * Eingebettetes Bild-Intermezzo: im Seitenraster, großzügig abgerundet,
+ * mit ruhigem Ken-Burns-Zoom und Pill-Bildunterschrift. Keine Full-Bleed-Crops.
  */
 export function ImageBand({
   src,
@@ -14,14 +15,18 @@ export function ImageBand({
   caption?: string;
 }) {
   return (
-    <section aria-label={caption ?? alt} className="relative">
-      <div className="kenburns relative h-[clamp(280px,44vw,480px)] overflow-hidden">
-        <Image src={src} alt={alt} fill sizes="100vw" className="object-cover" />
-        {caption && (
-          <p className="label absolute bottom-4 left-1/2 w-max max-w-[90vw] -translate-x-1/2 bg-schokolade/70 px-4 py-2 text-porzellan backdrop-blur-sm">
-            {caption}
-          </p>
-        )}
+    <section aria-label={caption ?? alt} className="py-6 md:py-10">
+      <div className="container-page">
+        <Reveal>
+          <div className="card-soft kenburns relative h-[clamp(260px,38vw,440px)] rounded-3xl">
+            <Image src={src} alt={alt} fill sizes="(max-width: 1264px) 100vw, 1136px" className="object-cover" />
+            {caption && (
+              <p className="label absolute bottom-4 left-4 rounded-full bg-porzellan/90 px-4 py-2 text-schokolade backdrop-blur-sm">
+                {caption}
+              </p>
+            )}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

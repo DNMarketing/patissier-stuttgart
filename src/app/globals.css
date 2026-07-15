@@ -132,14 +132,20 @@
   }
 
   .btn {
-    @apply inline-flex min-h-11 items-center justify-center gap-2 px-6 py-3 font-sans text-[0.9375rem] font-semibold;
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-7 py-3 font-sans text-[0.9375rem] font-semibold;
     transition:
       background-color var(--motion-fast) var(--ease-out-standard),
       color var(--motion-fast) var(--ease-out-standard),
+      box-shadow var(--motion-fast) var(--ease-out-standard),
       transform var(--motion-fast) var(--ease-out-standard);
+  }
+  .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgb(42 30 24 / 0.12);
   }
   .btn:active {
     transform: translateY(1px);
+    box-shadow: none;
   }
   .btn-primary {
     @apply bg-framboise text-porzellan;
@@ -195,9 +201,26 @@
     @apply text-framboise-tief decoration-framboise-tief;
   }
 
+  /* Weiche Premium-Karte: Radius, Ambient-Schatten, Hover-Lift */
+  .card-soft {
+    @apply overflow-hidden rounded-2xl border border-hairline bg-porzellan;
+    box-shadow: 0 6px 24px rgb(42 30 24 / 0.06);
+    transition:
+      transform var(--motion-base) var(--ease-out-standard),
+      box-shadow var(--motion-base) var(--ease-out-standard);
+  }
+  @media (hover: hover) {
+    a.card-soft:hover,
+    a:hover > .card-soft,
+    .card-lift:hover .card-soft {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 44px rgb(42 30 24 / 0.12);
+    }
+  }
+
   /* Bild-Hover in Galerien: Zoom <= 1.04 */
   .img-hover {
-    @apply overflow-hidden;
+    @apply overflow-hidden rounded-2xl;
   }
   .img-hover img {
     transition: transform var(--motion-slow) var(--ease-out-standard);
@@ -211,6 +234,9 @@
   /* FAQ: natives details/summary, ohne JS */
   .faq-item {
     border-bottom: 1px solid var(--color-hairline);
+  }
+  .input-soft {
+    @apply rounded-xl;
   }
   .faq-item summary {
     @apply flex min-h-11 cursor-pointer list-none items-baseline justify-between gap-6 py-5 font-display text-h3;
@@ -286,8 +312,7 @@
 /* Die Vitrine als endloses Laufband: volle Breite, klickbar, pausiert bei Hover */
 .vitrine-marquee {
   overflow: hidden;
-  border-top: 1px solid var(--color-hairline);
-  border-bottom: 1px solid var(--color-hairline);
+  padding-block: 0.5rem;
 }
 .vitrine-marquee-track {
   display: flex;
@@ -305,8 +330,8 @@
   }
 }
 .vitrine-card {
-  width: min(76vw, 340px);
-  border-left: 1px solid var(--color-hairline);
+  width: min(76vw, 330px);
+  margin-right: 1.25rem;
 }
 @media (prefers-reduced-motion: reduce) {
   .vitrine-marquee {

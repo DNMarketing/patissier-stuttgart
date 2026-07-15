@@ -26,7 +26,7 @@ export function JournalTeaser() {
             <Reveal key={post.slug} index={i}>
               <article>
                 <Link href={`/blog/${post.slug}`} className="group block">
-                  <div className="img-hover relative aspect-[3/2] border border-hairline">
+                  <div className="card-soft img-hover relative aspect-[3/2]">
                     <Image
                       src={post.cover}
                       alt={post.coverAlt}

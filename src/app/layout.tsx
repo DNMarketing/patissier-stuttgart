@@ -11,11 +11,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Pâtissier Stuttgart – Französische Patisserie, Macarons & Torten",
+    default: "Pâtissier Stuttgart: Französische Patisserie, Macarons & Torten",
     template: "%s | Pâtissier",
   },
   description:
-    "Französische Patisserie in Stuttgart-West: Macarons, Törtchen und Torten – handgemacht, bio, 100 % halal. Jetzt Torte oder Catering anfragen.",
+    "Französische Patisserie in Stuttgart-West: Macarons, Törtchen und Torten, handgemacht, bio und 100 % halal. Jetzt Torte oder Catering anfragen.",
   applicationName: site.shortName,
   // Kundenvorschau auf GitHub Pages darf nicht in den Google-Index
   robots: process.env.PREVIEW_EXPORT === "1" ? { index: false, follow: false } : undefined,
