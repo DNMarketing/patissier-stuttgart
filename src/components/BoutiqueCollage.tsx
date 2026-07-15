@@ -8,8 +8,9 @@ const BILDER = [
     alt: "Zweistöckige weiße Hochzeitstorte mit Blumendekoration und rosa Rosen.",
     href: "/hochzeitstorten",
     label: "N° 03 · Hochzeitstorten",
-    className: "row-span-2 aspect-[3/4]",
-    float: "float-slow",
+    className: "h-full min-h-[22rem]",
+    tall: true,
+    float: "",
   },
   {
     src: "/images/legacy/dessert-toertchen-beeren-creme.jpg",
@@ -61,8 +62,12 @@ export function BoutiqueCollage() {
         </Reveal>
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6">
           {BILDER.map((bild, i) => (
-            <Reveal key={bild.src} index={i} className={bild.className.includes("row-span-2") ? "row-span-2" : undefined}>
-              <Link href={bild.href} className={`group block ${bild.float}`}>
+            <Reveal
+              key={bild.src}
+              index={i}
+              className={"tall" in bild && bild.tall ? "row-span-2 [&>*]:h-full" : undefined}
+            >
+              <Link href={bild.href} className={`group block h-full ${bild.float}`}>
                 <figure className={`card-soft img-hover relative ${bild.className}`}>
                   <Image
                     src={bild.src}
