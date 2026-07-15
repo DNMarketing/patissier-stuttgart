@@ -51,7 +51,9 @@ export default function HomePage() {
     <>
       {/* Masthead: die Marke mittig über allem, wie ein Briefkopf */}
       <div className="container-page pt-10 md:pt-12">
-        <div className="hero-logo flex justify-center">
+        <div className="hero-logo flex items-center gap-4 sm:gap-6 md:gap-8">
+          <span aria-hidden className="h-px flex-1 bg-hairline" />
+          <span aria-hidden className="text-sm text-framboise">✱</span>
           <Image
             src="/images/brand/logo-patissier-schwarz.png"
             alt="Pâtissier - Macaron & Tartelette Boutique"
@@ -59,8 +61,10 @@ export default function HomePage() {
             height={1667}
             priority
             sizes="(max-width: 640px) 240px, 360px"
-            className="h-auto w-60 sm:w-72 md:w-[22.5rem]"
+            className="h-auto w-60 shrink-0 sm:w-72 md:w-[22.5rem]"
           />
+          <span aria-hidden className="text-sm text-framboise">✱</span>
+          <span aria-hidden className="h-px flex-1 bg-hairline" />
         </div>
       </div>
 
