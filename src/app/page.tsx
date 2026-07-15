@@ -1,0 +1,219 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { Reveal } from "@/components/Reveal";
+import { TestimonialQuote } from "@/components/TestimonialQuote";
+import { Vitrine } from "@/components/Vitrine";
+import { pageMetadata } from "@/lib/seo";
+import { hours, site } from "@/lib/site";
+import { getSortiment } from "@content/data/sortiment";
+import { testimonials } from "@content/data/testimonials";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Pâtissier Stuttgart – Französische Patisserie, Macarons & Torten",
+  description:
+    "Französische Pâtisserie in Stuttgart-West: Macarons, Törtchen und Torten – handgemacht, bio, 100 % halal. Sonntags geöffnet. Jetzt Torte oder Catering anfragen.",
+  path: "/",
+});
+
+const heroLines = ["Französische", "Pâtisserie,", "handgemacht in", "Stuttgart-West."];
+
+const grundsaetze = [
+  {
+    title: "Bio-Zutaten",
+    text: "Beste Bio-Rohstoffe, keine künstlichen Zusätze. Echte Süße braucht keine Abkürzungen, nur Zeit und Hingabe.",
+  },
+  {
+    title: "100 % halal",
+    text: "Bewusst ohne Alkohol, ausschließlich halal-zertifizierte Rinder-Gelatine. Jede Kreation, ohne Ausnahme.",
+  },
+  {
+    title: "Vegan möglich",
+    text: "Viele Törtchen, Kuchen und Macarons gibt es vegan und glutenfreundlich, ohne Kompromisse beim Geschmack.",
+  },
+];
+
+export default function HomePage() {
+  const wedding = getSortiment("hochzeitstorten");
+  const catering = getSortiment("catering");
+  const testimonial = testimonials[1]!;
+
+  return (
+    <>
+      {/* Hero, der eine choreografierte Moment (CSS-Sequenz, s. DESIGN.md §6) */}
+      <section className="container-page grid items-center gap-12 pt-12 pb-20 md:pt-16 md:pb-28 lg:grid-cols-12 lg:gap-8">
+        <div className="lg:col-span-7">
+          <h1 className="text-display">
+            {heroLines.map((line, i) => (
+              <span key={line} className="hero-line-mask">
+                <span className="hero-line" style={{ "--i": i } as React.CSSProperties}>
+                  {line}
+                </span>
+              </span>
+            ))}
+          </h1>
+          <div className="hero-meta mt-9">
+            <p className="max-w-[52ch] text-lead text-taupe">
+              Macarons, Törtchen und Torten aus der Boutique in der Kornbergstraße,
+              aus Bio-Zutaten, 100 % halal, vieles vegan. Wie in Paris, nur eben um
+              die Ecke.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link href="/kontakt" className="btn btn-primary">
+                Torte anfragen
+              </Link>
+              <a href="#vitrine-heading" className="btn btn-secondary">
+                Sortiment ansehen
+              </a>
+            </div>
+            <p className="label mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-taupe">
+              <span>Kornbergstraße 17 · Stuttgart-West</span>
+              <span aria-hidden className="text-hairline">
+                |
+              </span>
+              <span className="text-framboise">Sonntags geöffnet</span>
+            </p>
+          </div>
+        </div>
+        <div className="hero-media lg:col-span-5">
+          <div className="relative mx-auto aspect-[3/4] max-h-[34rem] w-full max-w-md">
+            <Image
+              src={wedding.image}
+              alt={wedding.imageAlt}
+              fill
+              priority
+              fetchPriority="high"
+              sizes="(max-width: 1024px) 90vw, 440px"
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Signature-Element: Die Vitrine */}
+      <Vitrine />
+
+      {/* Grundsätze, die eine Puder-Fläche der Seite */}
+      <section aria-labelledby="grundsaetze-heading" className="bg-puder py-20 md:py-24">
+        <div className="container-page">
+          <Reveal>
+            <p className="label text-taupe">Unsere Grundsätze</p>
+            <h2 id="grundsaetze-heading" className="mt-3 max-w-2xl text-h2">
+              Feinbäcker-Handwerk mit Verantwortung
+            </h2>
+          </Reveal>
+          <div className="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-3">
+            {grundsaetze.map((g) => (
+              <div key={g.title} className="hairline-t pt-5">
+                <h3 className="font-display text-h3">{g.title}</h3>
+                <p className="mt-3 text-taupe">{g.text}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-12">
+            <Link href="/halal-bio-vegan" className="text-link">
+              Was Halal, Bio & Vegan bei uns konkret bedeutet
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      <TestimonialQuote testimonial={testimonial} />
+
+      {/* Catering-Teaser */}
+      <section aria-labelledby="catering-heading" className="hairline-t py-20 md:py-28">
+        <div className="container-page grid items-center gap-10 lg:grid-cols-12 lg:gap-8">
+          <Reveal className="lg:col-span-5">
+            <div className="img-hover relative aspect-[4/5] max-h-130 w-full">
+              <Image
+                src={catering.image}
+                alt={catering.imageAlt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 460px"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+          <div className="lg:col-span-6 lg:col-start-7">
+            <p className="sortiment-no text-caption text-taupe">N° {catering.no}</p>
+            <h2 id="catering-heading" className="mt-3 text-h2">
+              Catering & Sweet Tables
+            </h2>
+            <p className="mt-6 max-w-[54ch] text-lead text-taupe">
+              Von feinen Petit Fours für den Kaffeeklatsch bis zum Themenbuffet nach
+              Ihren Wünschen, inklusive Anrichtegeschirr und stilvoller Inszenierung
+              vor Ort. Für akute Pâtissier-Sucht bei Ihren Gästen übernehmen wir
+              allerdings keine Verantwortung.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link href="/catering" className="btn btn-secondary">
+                Catering entdecken
+              </Link>
+              <Link href="/kontakt?anlass=catering" className="btn btn-primary">
+                Catering anfragen
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Besuch: Öffnungszeiten prominent, Mo/Di klar als Ruhetage */}
+      <section aria-labelledby="besuch-heading" className="hairline-t py-20 md:py-24">
+        <div className="container-page grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <Reveal>
+              <p className="label text-taupe">Die Boutique</p>
+              <h2 id="besuch-heading" className="mt-3 text-h2">
+                Besuchen Sie uns, auch sonntags
+              </h2>
+            </Reveal>
+            <p className="mt-6 max-w-[48ch] text-taupe">
+              Mitten in Stuttgart-West, nahe Hölderlinplatz: In der Vitrine warten
+              Macarons, Törtchen und Kuchen aus der aktuellen Produktion. Montag und
+              Dienstag gönnen wir dem Handwerk eine Pause.
+            </p>
+            <address className="mt-8 text-body not-italic">
+              <strong>{site.name}</strong>
+              <br />
+              {site.address.street}, {site.address.zip} {site.address.city}
+              <br />
+              <a href={`tel:${site.phone.e164}`} className="text-link">
+                Tel. {site.phone.display}
+              </a>
+            </address>
+            <p className="mt-8">
+              <Link href="/kontakt" className="btn btn-secondary">
+                Kontakt & Anfahrt
+              </Link>
+            </p>
+          </div>
+          <div className="lg:col-span-6 lg:col-start-7">
+            <table className="w-full">
+              <caption className="label pb-4 text-left text-taupe">Öffnungszeiten</caption>
+              <tbody>
+                {hours.map((h) => (
+                  <tr key={h.day} className="hairline-t">
+                    <th scope="row" className="py-3.5 pr-6 text-left font-sans font-medium">
+                      {h.day}
+                    </th>
+                    <td
+                      className={`py-3.5 text-right ${
+                        h.opens
+                          ? h.day === "Sonntag"
+                            ? "font-semibold text-framboise"
+                            : ""
+                          : "text-taupe"
+                      }`}
+                    >
+                      {h.opens ? `${h.opens} – ${h.closes} Uhr` : "Ruhetag"}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
