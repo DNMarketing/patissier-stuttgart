@@ -24,11 +24,11 @@ export const sortiment: Sortiment[] = [
     claim: "Fein, farbenfroh, voller Charakter.",
     description:
       "Zarte Schalen, cremige Füllungen, auch personalisiert oder mit edler Gravur für besondere Botschaften.",
-    image: "/images/legacy/macaron-buffet-catering-stuttgart.jpg",
+    image: "/images/insta/macarons-pastell-flieder-rosa.jpg",
     imageAlt:
-      "Ein Buffet-Tisch mit einer Vielzahl von bunten Macarons und Pralinen bei einer Feier im Zelt.",
-    imageWidth: 2500,
-    imageHeight: 3333,
+      "Pastellfarbene Macarons in Flieder und Rosa, frisch verpackt in der Geschenkbox.",
+    imageWidth: 640,
+    imageHeight: 1136,
   },
   {
     no: "02",
@@ -38,11 +38,11 @@ export const sortiment: Sortiment[] = [
     claim: "Creme, Frucht und Biskuit in Harmonie.",
     description:
       "Französische Patisserie, handgefertigt: raffiniert veredelte Törtchen und Kuchen für den bewussten Genuss.",
-    image: "/images/legacy/dessert-toertchen-beeren-creme.jpg",
+    image: "/images/insta/sakura-toertchen-herzform.jpg",
     imageAlt:
-      "Elegantes rosafarbenes Dessert mit weißer Creme und frischen Beeren auf weißem Teller.",
-    imageWidth: 1284,
-    imageHeight: 1563,
+      "Rosa Sakura-Törtchen in Herzform mit zarten Kirschblüten-Details.",
+    imageWidth: 1080,
+    imageHeight: 957,
   },
   {
     no: "03",
@@ -66,11 +66,11 @@ export const sortiment: Sortiment[] = [
     claim: "Gefeiert wird mit Stil.",
     description:
       "Motivtorten und feine Klassiker zum Geburtstag, ganz nach Wunsch gestaltet, für Kinder wie Erwachsene.",
-    image: "/images/legacy/schokoladentorte-goldblatt-patisserie.jpg",
+    image: "/images/insta/geburtstagstorte-weiss-macaron-gold.jpg",
     imageAlt:
-      "Kunstvoll gestaltete Schokoladentorte mit dunkler Glasur und Blattgold-Dekor auf blauem Teller.",
-    imageWidth: 1284,
-    imageHeight: 1666,
+      "Elegante weiße Torte mit Cremetuffs, Macaron und goldenem Dekor auf dem Cafétisch.",
+    imageWidth: 1080,
+    imageHeight: 1920,
   },
   {
     no: "05",

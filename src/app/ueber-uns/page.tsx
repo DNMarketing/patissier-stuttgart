@@ -37,8 +37,8 @@ export default function UeberUnsPage() {
             <figure>
               <div className="img-hover relative aspect-[4/5] max-h-130">
                 <Image
-                  src="/images/legacy/schokoladentorte-goldblatt-patisserie.jpg"
-                  alt="Kunstvoll gestaltete Schokoladentorte mit dunkler Glasur und Blattgold-Dekor auf blauem Teller."
+                  src="/images/insta/handwerk-schokotoertchen-anrichten.jpg"
+                  alt="Zwei Hände richten ein glasiertes Schokoladentörtchen mit Himbeere auf einem Teller an."
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 460px"
@@ -46,7 +46,7 @@ export default function UeberUnsPage() {
                 />
               </div>
               <figcaption className="mt-3 text-caption text-taupe">
-                Handwerk bis ins Detail, bis zum Blattgold.
+                Handarbeit, bis das Törtchen sitzt.
               </figcaption>
             </figure>
           </div>

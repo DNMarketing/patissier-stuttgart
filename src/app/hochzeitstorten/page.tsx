@@ -26,6 +26,10 @@ export default function HochzeitstortenPage() {
         breadcrumbName="Hochzeitstorten"
         h1={<>Hochzeitstorten aus Stuttgart, so individuell wie Ihr Fest.</>}
         lead="Der Moment, in dem die Torte hereingetragen wird, gehört zu den Bildern, die bleiben. Wir gestalten Ihre Hochzeitstorte individuell, abgestimmt auf Ihre Farben, Ihre Blumen, Ihren Geschmack. Handgemacht, bio, 100 % halal."
+        imageOverride={{
+          src: "/images/insta/hochzeitstorte-mehrstoeckig-blueten.jpg",
+          alt: "Zweistöckige cremeweiße Hochzeitstorte mit gepressten Blüten auf der Tortenplatte in der Boutique.",
+        }}
       />
 
       {/* Einzigartig auf dieser Seite: Stilrichtungen als Editorial-Reihen */}

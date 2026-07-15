@@ -20,8 +20,8 @@ const BILDER = [
     float: "float-slower",
   },
   {
-    src: "/images/legacy/macaron-buffet-catering-stuttgart.jpg",
-    alt: "Buffet mit einer Vielzahl bunter Macarons bei einer Feier.",
+    src: "/images/insta/macarons-pastell-flieder-rosa.jpg",
+    alt: "Pastellfarbene Macarons in Flieder und Rosa in der Geschenkbox.",
     href: "/macarons",
     label: "N° 01 · Macarons",
     className: "aspect-[4/3]",

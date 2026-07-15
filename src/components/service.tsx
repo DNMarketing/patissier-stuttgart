@@ -14,12 +14,14 @@ export function ServiceHero({
   breadcrumbName,
   h1,
   lead,
+  imageOverride,
 }: {
   item: Sortiment;
   path: string;
   breadcrumbName: string;
   h1: ReactNode;
   lead: string;
+  imageOverride?: { src: string; alt: string };
 }) {
   return (
     <section className="container-page pt-10 pb-20 md:pt-14 md:pb-24">
@@ -36,8 +38,8 @@ export function ServiceHero({
         <div className="lg:col-span-5">
           <div className="img-hover relative aspect-[4/5] max-h-130 w-full">
             <Image
-              src={item.image}
-              alt={item.imageAlt}
+              src={imageOverride?.src ?? item.image}
+              alt={imageOverride?.alt ?? item.imageAlt}
               fill
               sizes="(max-width: 1024px) 100vw, 460px"
               priority

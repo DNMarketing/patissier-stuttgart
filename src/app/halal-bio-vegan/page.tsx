@@ -56,8 +56,8 @@ export default function HalalBioVeganPage() {
           <div className="lg:col-span-5">
             <div className="img-hover relative aspect-[4/5] max-h-130 w-full">
               <Image
-                src="/images/legacy/dessert-toertchen-beeren-creme.jpg"
-                alt="Elegantes rosafarbenes Dessert mit weißer Creme und frischen Beeren auf weißem Teller."
+                src="/images/insta/tartelettes-backstube-blech.jpg"
+                alt="Pistazien-Tartelettes werden in der Backstube von Hand gefüllt."
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 460px"
