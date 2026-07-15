@@ -14,7 +14,10 @@ const nextConfig: NextConfig = {
         output: "export" as const,
         basePath: "/patissier-stuttgart",
         trailingSlash: true,
-        images: { unoptimized: true },
+        images: {
+          loader: "custom" as const,
+          loaderFile: "./src/lib/preview-image-loader.ts",
+        },
       }
     : {
         images: {
