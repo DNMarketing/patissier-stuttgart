@@ -95,6 +95,20 @@ export default function HomePage() {
               sizes="(max-width: 1024px) 90vw, 440px"
               className="rounded-3xl object-cover"
             />
+            {/* Signatur-Karte: die Marke, wie ein Etikett auf der Schachtel */}
+            <div className="hero-seal absolute -top-5 -right-3 w-36 sm:w-44 md:-right-10 md:-top-7 md:w-52">
+              <div className="card-soft -rotate-3 bg-porzellan/95 px-5 py-4 backdrop-blur-sm md:px-6 md:py-5">
+                <Image
+                  src="/images/brand/logo-patissier-schwarz.png"
+                  alt="Pâtissier - Macaron & Tartelette Boutique"
+                  width={2500}
+                  height={1667}
+                  sizes="208px"
+                  className="h-auto w-full"
+                />
+              </div>
+            </div>
+
             {/* Schwebendes Nebenbild: zweite Ebene, erst nach dem Hero-Moment */}
             <div className="hero-side absolute -bottom-10 -left-16 hidden w-44 overflow-hidden rounded-2xl border-4 border-porzellan shadow-[0_18px_40px_rgb(42_30_24/0.18)] md:block">
               <Image

@@ -283,6 +283,13 @@
     hero-fade 700ms var(--ease-out-standard) 950ms forwards,
     float-slow 7s ease-in-out 2s infinite alternate;
 }
+/* Signatur-Karte mit dem Logo: etwas später, eigener Schwebe-Rhythmus */
+.hero-seal {
+  opacity: 0;
+  animation:
+    hero-fade 700ms var(--ease-out-standard) 1200ms forwards,
+    float-slow 9s ease-in-out 2.6s infinite alternate;
+}
 .hero-meta {
   opacity: 0;
   transform: translateY(12px);
@@ -408,6 +415,7 @@
   .hero-line,
   .hero-media,
   .hero-side,
+  .hero-seal,
   .hero-meta {
     animation: none;
     opacity: 1;
