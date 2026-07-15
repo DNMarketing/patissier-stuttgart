@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="de">
+  <head><meta charset="utf-8" /><title>Netlify Forms Registrierung</title></head>
+  <body>
+    <!-- Statische Form-Definition, damit Netlify das Formular beim Deploy erkennt.
+         Das sichtbare Formular (React) postet URL-kodiert gegen diese Datei. -->
+    <form name="kontakt" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="telefon" />
+      <select name="anlass">
+        <option>Hochzeit</option>
+        <option>Geburtstag</option>
+        <option>Catering</option>
+        <option>Macarons</option>
+        <option>Sonstiges</option>
+      </select>
+      <input type="date" name="wunschtermin" />
+      <textarea name="nachricht"></textarea>
+      <input type="checkbox" name="datenschutz" />
+    </form>
+  </body>
+</html>
