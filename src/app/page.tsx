@@ -52,10 +52,22 @@ export default function HomePage() {
       {/* Hero, der eine choreografierte Moment (CSS-Sequenz, s. DESIGN.md §6) */}
       <section className="container-page grid items-center gap-12 pt-12 pb-20 md:pt-16 md:pb-28 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-7">
-          <h1 className="text-display">
+          {/* Die Marke zuerst: das Logo als Hero-Statement (Wiedererkennung) */}
+          <div className="hero-logo">
+            <Image
+              src="/images/brand/logo-patissier-schwarz.png"
+              alt="Pâtissier - Macaron & Tartelette Boutique"
+              width={2500}
+              height={1667}
+              priority
+              sizes="(max-width: 640px) 260px, 420px"
+              className="h-auto w-64 sm:w-80 lg:w-[26rem]"
+            />
+          </div>
+          <h1 className="mt-6 text-h2">
             {heroLines.map((line, i) => (
               <span key={line.text} className="hero-line-mask">
-                <span className="hero-line" style={{ "--i": i } as React.CSSProperties}>
+                <span className="hero-line" style={{ "--i": i + 5 } as React.CSSProperties}>
                   {line.accent ? <em className="accent-em">{line.text}</em> : line.text}
                 </span>
               </span>
@@ -95,20 +107,6 @@ export default function HomePage() {
               sizes="(max-width: 1024px) 90vw, 440px"
               className="rounded-3xl object-cover"
             />
-            {/* Signatur-Karte: die Marke, wie ein Etikett auf der Schachtel */}
-            <div className="hero-seal absolute -top-5 -right-3 w-36 sm:w-44 md:-right-10 md:-top-7 md:w-52">
-              <div className="card-soft -rotate-3 bg-porzellan/95 px-5 py-4 backdrop-blur-sm md:px-6 md:py-5">
-                <Image
-                  src="/images/brand/logo-patissier-schwarz.png"
-                  alt="Pâtissier - Macaron & Tartelette Boutique"
-                  width={2500}
-                  height={1667}
-                  sizes="208px"
-                  className="h-auto w-full"
-                />
-              </div>
-            </div>
-
             {/* Schwebendes Nebenbild: zweite Ebene, erst nach dem Hero-Moment */}
             <div className="hero-side absolute -bottom-10 -left-16 hidden w-44 overflow-hidden rounded-2xl border-4 border-porzellan shadow-[0_18px_40px_rgb(42_30_24/0.18)] md:block">
               <Image

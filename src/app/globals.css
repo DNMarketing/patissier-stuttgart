@@ -283,17 +283,16 @@
     hero-fade 700ms var(--ease-out-standard) 950ms forwards,
     float-slow 7s ease-in-out 2s infinite alternate;
 }
-/* Signatur-Karte mit dem Logo: etwas später, eigener Schwebe-Rhythmus */
-.hero-seal {
+/* Das Logo eröffnet die Choreografie: erster Akt, vor den Textzeilen */
+.hero-logo {
   opacity: 0;
-  animation:
-    hero-fade 700ms var(--ease-out-standard) 1200ms forwards,
-    float-slow 9s ease-in-out 2.6s infinite alternate;
+  transform: translateY(14px);
+  animation: hero-fade 800ms var(--ease-hero) 100ms forwards;
 }
 .hero-meta {
   opacity: 0;
   transform: translateY(12px);
-  animation: hero-fade var(--motion-slow) var(--ease-out-standard) 600ms forwards;
+  animation: hero-fade var(--motion-slow) var(--ease-out-standard) 1050ms forwards;
 }
 
 @keyframes hero-line-up {
@@ -413,9 +412,9 @@
    --------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   .hero-line,
+  .hero-logo,
   .hero-media,
   .hero-side,
-  .hero-seal,
   .hero-meta {
     animation: none;
     opacity: 1;
