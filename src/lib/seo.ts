@@ -17,7 +17,9 @@ export function pageMetadata({
     title,
     description,
     alternates: { canonical: path },
-    robots: noindex ? { index: false, follow: true } : undefined,
+    // Key nur setzen, wenn nötig — `robots: undefined` würde beim Metadata-Merge
+    // das globale noindex der Preview-Umgebung (layout.tsx) überschreiben.
+    ...(noindex ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title,
       description,
