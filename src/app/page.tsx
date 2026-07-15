@@ -49,25 +49,28 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero, der eine choreografierte Moment (CSS-Sequenz, s. DESIGN.md §6) */}
-      <section className="container-page grid items-center gap-12 pt-12 pb-20 md:pt-16 md:pb-28 lg:grid-cols-12 lg:gap-8">
+      {/* Masthead: die Marke mittig über allem, wie ein Briefkopf */}
+      <div className="container-page pt-10 md:pt-12">
+        <div className="hero-logo flex justify-center">
+          <Image
+            src="/images/brand/logo-patissier-schwarz.png"
+            alt="Pâtissier - Macaron & Tartelette Boutique"
+            width={2500}
+            height={1667}
+            priority
+            sizes="(max-width: 640px) 240px, 360px"
+            className="h-auto w-60 sm:w-72 md:w-[22.5rem]"
+          />
+        </div>
+      </div>
+
+      {/* Hero: der eine choreografierte Moment (CSS-Sequenz, s. DESIGN.md §6) */}
+      <section className="container-page grid items-center gap-12 pt-10 pb-20 md:pt-12 md:pb-28 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-7">
-          {/* Die Marke zuerst: das Logo als Hero-Statement (Wiedererkennung) */}
-          <div className="hero-logo">
-            <Image
-              src="/images/brand/logo-patissier-schwarz.png"
-              alt="Pâtissier - Macaron & Tartelette Boutique"
-              width={2500}
-              height={1667}
-              priority
-              sizes="(max-width: 640px) 260px, 420px"
-              className="h-auto w-64 sm:w-80 lg:w-[26rem]"
-            />
-          </div>
-          <h1 className="mt-6 text-h2">
+          <h1 className="text-display">
             {heroLines.map((line, i) => (
               <span key={line.text} className="hero-line-mask">
-                <span className="hero-line" style={{ "--i": i + 5 } as React.CSSProperties}>
+                <span className="hero-line" style={{ "--i": i + 2 } as React.CSSProperties}>
                   {line.accent ? <em className="accent-em">{line.text}</em> : line.text}
                 </span>
               </span>
